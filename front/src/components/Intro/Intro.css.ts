@@ -1,17 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
 export const IntroPageContainer = style({
-  padding: "4px 22px 68px 22px",
   textAlign: "center",
-});
-
-export const BannerContainer = style({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "flex-end",
-  padding: "0 22px",
-  marginBottom: " 30px",
-  flex: 1,
 });
 
 export const Banner = style({
@@ -29,6 +19,7 @@ export const HandImage = style({
 });
 
 export const MRImage = style({
+  borderRadius: "10px",
   width: "75%",
   marginBottom: "16px",
 });
