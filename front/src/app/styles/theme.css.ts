@@ -16,6 +16,7 @@ export const vars = createThemeContract({
     },
     border: {
       ["01"]: null,
+      ["02"]: null,
     },
   },
   space: {
@@ -38,6 +39,7 @@ export const theme = createTheme(vars, {
     },
     border: {
       "01": "#DEDFE2",
+      "02": "#DEDFE2",
     },
   },
   space: {
