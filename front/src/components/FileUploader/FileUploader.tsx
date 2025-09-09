@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import {
   DropEvent,
   DropzoneOptions,
@@ -34,8 +34,6 @@ export const FileUploader = (props: FileUploaderProps) => {
   const { children, onLoad, options, readAs } = props;
   const [files, setFiles] = useState<DropzoneFile[]>([]);
   const [fileErrors, setErrorMessages] = useState<FileError[]>([]);
-
-  console.log(files, fileErrors);
 
   const setFileProperty = usePreservedCallback(
     (

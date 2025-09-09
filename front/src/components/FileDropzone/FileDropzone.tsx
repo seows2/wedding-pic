@@ -1,15 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { FileUploader } from "./FileUploader";
+import { FileUploader } from "../FileUploader";
+import { ImagePreview } from "./ImagePreview";
+import { VideoPreview } from "./VideoPreview";
 
 export const FileDropzone = () => {
-  const [files, setFiles] = useState<string[]>([]);
+  const [imagesSrc, setImagesSrc] = useState<string[]>([]);
 
   const handleLoad = (result: string | ArrayBuffer | null) => {
     if (!result) return;
     if (typeof result !== "string") return;
-    setFiles((prev) => [...prev, result]);
+    setImagesSrc((prev) => [...prev, result]);
   };
 
   return (
@@ -20,7 +22,7 @@ export const FileDropzone = () => {
           alert("지원하지 않는 포맷입니다.");
         },
         onDropAccepted(files, event) {
-          console.log(files);
+          alert(JSON.stringify(files));
         },
         accept: {
           "image/*": [
@@ -39,7 +41,16 @@ export const FileDropzone = () => {
       }}
       onLoad={handleLoad}
     >
-      test
+      {imagesSrc.map((src, idx) => {
+        const isImage = src.startsWith("data:image");
+        alert(src);
+
+        return isImage ? (
+          <ImagePreview key={idx} src={src} />
+        ) : (
+          <VideoPreview key={idx} src={src} />
+        );
+      })}
     </FileUploader>
   );
 };

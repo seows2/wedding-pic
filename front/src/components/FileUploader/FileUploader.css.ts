@@ -17,7 +17,7 @@ export const FileUploaderContainer = recipe({
         backgroundColor: vars.colors.background["01"],
       },
       false: {
-        backgroundColor: vars.colors.background["01"],
+        backgroundColor: vars.colors.border["01"],
       },
     },
     isDragReject: {
@@ -25,7 +25,7 @@ export const FileUploaderContainer = recipe({
         backgroundColor: vars.colors.background["01"],
       },
       false: {
-        backgroundColor: vars.colors.background["01"],
+        backgroundColor: vars.colors.border["01"],
       },
     },
   },
