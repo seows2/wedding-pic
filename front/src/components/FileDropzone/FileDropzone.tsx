@@ -18,12 +18,6 @@ export const FileDropzone = () => {
     <FileUploader
       readAs="readAsDataURL"
       options={{
-        onDropRejected(fileRejections) {
-          alert("지원하지 않는 포맷입니다.");
-        },
-        onDropAccepted(files, event) {
-          alert(JSON.stringify(files));
-        },
         accept: {
           "image/*": [
             ".jpg",
@@ -43,7 +37,6 @@ export const FileDropzone = () => {
     >
       {imagesSrc.map((src, idx) => {
         const isImage = src.startsWith("data:image");
-        alert(src);
 
         return isImage ? (
           <ImagePreview key={idx} src={src} />
