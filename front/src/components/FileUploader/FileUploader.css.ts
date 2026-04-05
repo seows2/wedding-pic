@@ -1,45 +1,56 @@
-import { vars } from "@/app/styles/theme.css";
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
-export const FileUploaderContainer = recipe({
+export const container = style({
+  width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  gap: "16px",
+});
+
+export const dropzone = recipe({
   base: {
-    width: "80%",
-    margin: "0 auto",
-    padding: "10px",
-    height: "200px",
-    border: `1px dashed ${vars.colors.border["01"]}`,
-    borderRadius: "5px",
+    width: "100%",
+    minHeight: "240px",
+    borderRadius: "16px",
+    border: "2px dashed #D1D1D1",
+    backgroundColor: "#F9F9F9",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    transition: "all 0.2s ease",
+    position: "relative",
+    textAlign: "center",
+    padding: "20px",
+    boxSizing: "border-box",
   },
   variants: {
-    isDragAccept: {
+    isDragActive: {
       true: {
-        backgroundColor: vars.colors.background["01"],
+        borderColor: "#FFB800",
+        backgroundColor: "#FFFBEB",
+        transform: "scale(1.02)",
       },
       false: {
-        backgroundColor: vars.colors.border["01"],
+        borderColor: "#D1D1D1",
       },
     },
-    isDragReject: {
+    hasFiles: {
       true: {
-        backgroundColor: vars.colors.background["01"],
-      },
-      false: {
-        backgroundColor: vars.colors.border["01"],
+        minHeight: "120px", // 파일이 있으면 높이를 줄여 리스트를 보여줌
       },
     },
+  },
+  defaultVariants: {
+    isDragActive: false,
   },
 });
 
-export const FileUploaderInput = style({
-  border: 0,
-  clip: "rect(0, 0, 0, 0)",
-  clipPath: "inset(50%)",
-  height: "1px",
-  margin: "0 -1px -1px 0",
-  overflow: "hidden",
-  padding: 0,
-  position: "absolute",
-  width: "1px",
-  whiteSpace: "nowrap",
+export const previewGrid = style({
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fill, minmax(100px, 120px))",
+  gap: "12px",
+  width: "100%",
 });

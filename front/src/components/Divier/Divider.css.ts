@@ -5,5 +5,6 @@ export const Divider = style({
 });
 
 export const DividerImg = style({
-  width: "100%",
+  width: "auto",
+  height: "auto",
 });

@@ -7,4 +7,6 @@ export const LayoutContainer = style({
   color: vars.colors.text.primary,
   background: vars.colors.background["01"],
   padding: "44px 22px 88px 22px",
+  position: "relative",
+  minHeight: "100dvh",
 });

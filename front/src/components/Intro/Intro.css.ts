@@ -14,12 +14,11 @@ export const Banner = style({
 });
 
 export const HandImage = style({
-  width: "75px",
   marginBottom: "16px",
 });
 
 export const MRImage = style({
   borderRadius: "10px",
-  width: "75%",
+  aspectRatio: "3 / 4",
   marginBottom: "16px",
 });
